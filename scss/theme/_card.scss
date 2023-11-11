@@ -1,0 +1,46 @@
+/*-----------------------------------------------
+|   Card spacer
+-----------------------------------------------*/
+.p-card, .px-card {
+  padding-left: $card-spacer-x;
+  padding-right: $card-spacer-x;
+}
+.p-card, .py-card {
+  padding-top: $card-spacer-y;
+  padding-bottom: $card-spacer-y;
+}
+.card-span{
+  transition: $transition-base;
+  .card-span-img{
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  @include hover-focus{
+    transform: translateY(-0.2rem);
+    box-shadow: $box-shadow-sm;
+  }
+}
+.card-span-blog{
+  transition: all .4s ease-in-out;
+  .card-span-img-blog{
+    position: absolute;
+    top: 0;
+    left:50%;
+    transform: translate3d(-50%, -50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  @include hover-focus{
+    .card-img-top{
+      //transform: scale(0.99);
+    }
+    box-shadow: $box-shadow-sm;
+  }
+}

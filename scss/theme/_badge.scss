@@ -1,0 +1,38 @@
+/*-----------------------------------------------
+|   Badge
+-----------------------------------------------*/
+@mixin badge-soft-variant-old($bg, $color) {
+  color: $color;
+  background-color: $bg;
+  &[href] {
+    @include hover-focus {
+      text-decoration: none;
+      color: $color;
+      background-color: darken($bg, 10%);
+    }
+  }
+}
+
+@mixin badge-soft-variant($color) {
+  color: $color;
+  background-color: rgba($color, 0.08);
+  &[href] {
+    @include hover-focus {
+      text-decoration: none;
+      color: $color;
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .badge-soft-#{$color} {
+    @include badge-soft-variant($value);
+    //@if $color != 'light' {
+    //  //@include badge-soft-variant(theme-color-level($color, -10), theme-color-level($color, 0.8));
+    //  @include badge-soft-variant($color);
+    //} @else {
+    //  @include badge-soft-variant(theme-color-level($color, -10), theme-color-level($color, 4.5));
+    //}
+  }
+}

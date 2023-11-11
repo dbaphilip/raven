@@ -1,0 +1,42 @@
+/*-----------------------------------------------
+|   Heading background Under line
+-----------------------------------------------*/
+
+
+.heading-underline {
+  position: relative;
+  display: inline-block;
+  &:after{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    width: 105%;
+    background-color: $gray-200;
+    z-index: -1;
+  }
+  &.heading-underline-1:after{
+    height: 30%;
+    border-radius: 45px;
+    transform: translate3d(-50%, 40%, 0);
+  }
+  &.heading-underline-2:after{
+    height: 50%;
+    border-radius: 0.75rem;
+    transform: translate3d(-50%, 0%, 0);
+  }
+  &.heading-underline-3:after{
+    height: 60%;
+    border-radius: 0.5rem;
+    transform: translate3d(-50%, 0%, 0);
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .heading-underline {
+    &:after {
+      display: none;
+    }
+  }
+}

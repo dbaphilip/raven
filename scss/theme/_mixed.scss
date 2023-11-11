@@ -1,0 +1,98 @@
+/*-----------------------------------------------
+|   Object fit and Z-index
+-----------------------------------------------*/
+.fit-cover{ object-fit: cover; }
+.z-index-1{ z-index: 1; }
+.z-index--1{z-index: -1;}
+.z-index-0{z-index: 0;}
+
+/*-----------------------------------------------
+|   Sidebar
+-----------------------------------------------*/
+.sticky-sidebar{ top: 85px; }
+
+/*-----------------------------------------------
+|   Custom circle
+-----------------------------------------------*/
+.circle-dashed{
+  border: 1px dashed $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+/*-----------------------------------------------
+|   Miscellaneous
+-----------------------------------------------*/
+@include hover-focus{
+  .hover-text-decoration-none{
+    text-decoration: none;
+  }
+}
+.resize-none{ resize: none; }
+
+
+
+
+/*-----------------------------------------------
+|   Media object circle
+-----------------------------------------------*/
+.media-list-circle {
+    height:  2rem;
+    width:  2rem;
+    border-radius: 50%;
+    border:1px solid $primary;
+    font-weight: bolder;
+    padding-top: 5px;
+    transition: all .2s ease-out;
+  }
+
+
+
+/*-----------------------------------------------
+|   sec divider hover and underline style
+-----------------------------------------------*/
+
+.custome-underline {
+  position: relative;
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top:155%;
+    left: 50%;
+    width: 110%;
+    height: 100%;
+    background-image: url('../img/bg-img/underline-cv1.png');
+    background-repeat: no-repeat;
+    transform: translate3d(-50%,-50%,0);
+  }
+}
+@include media-breakpoint-down(md) { .custome-underline {  &:after { display: none; } } }
+/*-----------------------------------------------
+|   clint testimonial quote
+-----------------------------------------------*/
+.testimonial-quote {
+  height: 1.875rem ;
+  left: -1.5rem ;
+  top: 2.6875rem;
+}
+
+.overflow-visible { overflow: visible; }
+
+
+// NTR
+.h-banner {
+  min-height: 25rem;
+  @include media-breakpoint-up(sm){  min-height: 32rem; }
+  @include media-breakpoint-up(md){ min-height: 23rem; }
+  @include media-breakpoint-up(lg){ min-height: 33rem; }
+  @include media-breakpoint-up(xxl){ min-height: 35rem; }
+}
+
+.subpage-banner-height {
+  min-height: 40vh;
+}

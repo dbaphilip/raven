@@ -1,0 +1,15 @@
+
+.ui.accordion .active.title .dropdown.icon {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(45deg);
+}
+
+.collapsed .collapse-icon {
+  transition: $transition-base;
+  transform: rotate(180deg);
+}
+.collapse-icon {
+  transition: $transition-base;
+  transform: rotate(0deg);
+}
+

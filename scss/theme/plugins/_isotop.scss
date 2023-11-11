@@ -1,0 +1,63 @@
+/*-----------------------------------------------
+|   Isotope
+-----------------------------------------------*/
+.sortable{
+  .menu{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $font-family-sans-serif;
+    // text-transform: lowercase;
+    text-decoration: none;
+    letter-spacing: 0.02rem;
+    .item{
+      cursor: pointer;
+      padding: map_get($spacers, 1) map_get($spacers, 2);
+      border-radius: $border-radius;
+      transition: $transition-base;
+      margin-right: map_get($spacers, 1);
+      font-weight: bold;
+      color: $gray-500;
+      &:last-child{
+        margin-right: 0;
+      }
+      &.active{
+        // border-color: currentColor;
+        color: $gray-1100;
+      }
+    }
+  }
+}
+
+.sortable-container.sortable-container-gutter-fix{
+  margin-left: - map_get($spacers, 2);
+  margin-right: - map_get($spacers, 2);
+}
+.grid {
+  background: #DDD;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .element-item ---- */
+
+/* 5 columns, percentage width */
+.grid-item,
+.grid-sizer {
+  width: 25%;
+}
+
+.grid-item {
+  float: left;
+  height: 100px;
+  background: #0D8;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.grid-item--width2 { width: 40%; }
+.grid-item--height2 { height: 400px; }

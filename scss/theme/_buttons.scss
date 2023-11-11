@@ -1,0 +1,170 @@
+/*-----------------------------------------------
+|   Social Outline Buttons
+-----------------------------------------------*/
+.btn-outline-facebook{ @include button-outline-variant($facebook) }
+.btn-outline-twitter { @include button-outline-variant($twitter) }
+.btn-outline-google-plus { @include button-outline-variant($google-plus) }
+
+.btn {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+@each $color, $value in $theme-colors {
+  .btn-raven-solid-#{$color} {
+    @if($color=='light'){
+      color:$primary;
+    }
+    @else{
+      color:$white;
+    }
+    background: $value !important;
+    transition: $transition-base;
+    @include hover-focus{
+      @if($color=='light'){
+        color: $primary;
+      }
+      @else {
+        color: $white;
+      }
+      box-shadow: 0 7px 15px rgba($value, 0.26);
+      transform: translateY(-2px);
+      border-color: $value !important;
+    }
+  }
+}
+
+
+/*-----------------------------------------------
+|   Raven buttons
+-----------------------------------------------*/
+@each $color, $value in $theme-colors {
+  .btn-raven-#{$color} {
+    @if ($color == 'light') {
+      color: $primary;
+    } @else if ($color == 'dark') {
+      color: $white;
+    } @else {
+      color: $value;
+    }
+    background: rgba($value, 0.08);
+    transition: $transition-base;
+    @include hover-focus {
+      @if ($color=='light') {
+        color: $primary;
+      } @else {
+        color: $white;
+      }
+      background: $value !important;
+      box-shadow: 0 7px 15px rgba($value, 0.26);
+      transform: translateY(-0.125rem);
+    }
+  }
+}
+
+/*-----------------------------------------------
+|   Raven rounded buttons // TODO: Refactor Button name
+-----------------------------------------------*/
+@each $color, $value in $theme-colors {
+  .raven-round-button-#{$color} {
+    position: relative;
+    width: 3.25rem;
+    height: 3.25rem;
+    background: rgba($value, 0.08);
+    border-radius: 50%;
+    @if($color== 'light'){
+      color: $dark;
+    } 
+    @else {
+      color:$value;
+    }
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:before {
+      content: '';
+      background: $value;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: $transition-base;
+    }
+    .icon{
+      margin-left: 0.25rem;
+      transition: $transition-base;
+      z-index: 1;
+    }
+    @include hover-focus{
+      .icon{
+        @if($color == 'light'){
+          color: $dark;
+        }
+        @else {
+          color: $light;
+        }
+      }
+      &:before{
+        width: 3.25rem;
+        height: 3.25rem;
+      }
+    }
+  }
+  .raven-round-solid-button-#{$color} {
+    @extend .raven-round-button-#{$color};
+    background-color: $light;
+  }
+}
+@each $color, $value in $theme-colors {
+  .media-player-hover {
+    @include hover-focus{
+      .raven-round-button-#{$color}{
+        .icon{
+          @if($color == 'light'){
+            color: $dark;
+          }
+          @else {
+            color: $light;
+          }
+        }
+        &:before{
+          width: 3.25rem;
+          height: 3.25rem;
+        }
+      }
+      }
+  }
+}
+
+
+.btn-toggle-raven {
+  &:nth-child(2){
+    border-left: 0;
+  }
+  .btn{
+    cursor: pointer;
+    border: 0;
+    background-color: $white !important;
+    color: $success;
+    border-radius: 6px;
+    width: 108px;
+    font-weight: bolder !important;
+  }
+}
+
+.btn-toggle-raven .btn.active{
+  background-color: $success !important;
+  color: $white;
+}
+/*-----------------------------------------------
+|   Input with button height
+-----------------------------------------------*/
+.btn-toggle-raven > .btn:not(:first-child), .btn-toggle-raven > .btn-group:not(:first-child) {
+  margin-left: 0; 
+}

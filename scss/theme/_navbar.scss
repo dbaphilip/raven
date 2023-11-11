@@ -1,0 +1,54 @@
+@include media-breakpoint-up(md) {
+  .navbar-dropdown-col-4 {
+    min-width: 35rem;
+  }
+}
+.navbar {
+  .dropdown-item {
+    font-weight: $font-weight-medium;
+  }
+}
+.navbar-raven {
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0 11px 26px rgba(82, 95, 128, 0);
+}
+.dropdown-menu {
+  top:100%;
+  left: -0.625rem;
+  border: 0;
+}
+.megamenu {
+  position: static;
+}
+
+.megamenu .dropdown-menu {
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+
+.navbar-light .navbar-nav .nav-link  { 
+  transition: $transition-base;
+  @include hover-focus{ 
+    color: $primary;
+    background-color: $white;
+  }
+}
+.dropdown-item {
+  transition: $transition-base;
+  @include hover-focus{
+    color: $primary;
+    background-color: $white;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .dropdown-menu-on-hover{
+    &.dropdown {
+      @include hover-focus {
+        .dropdown-menu { display: block; }
+      }
+    }
+  }
+}
